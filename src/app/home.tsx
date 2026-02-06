@@ -13,7 +13,7 @@ export default function Home() {
   const isDarkMode = colorScheme === "dark"
   const [renderForm, setRenderForm] = useState(false)
 
-  const formAnim = useRef(new Animated.Value(-400)).current
+  const formAnim = useRef(new Animated.Value(-1000)).current
 
   useEffect(() => {
 
