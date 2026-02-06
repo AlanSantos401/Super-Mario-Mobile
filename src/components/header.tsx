@@ -1,6 +1,6 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { useRouter } from "expo-router";
+import { Image, Linking, Text, TouchableOpacity, View } from "react-native";
 import { HeaderStyles } from "../styles/headerStyles";
-import { useNavigation, useRouter } from "expo-router";
 
 
 export default function Header() {
@@ -23,7 +23,11 @@ export default function Header() {
             Serviços
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => Linking.openURL(
+            "https://wa.me/5574981215249?text=Olá!%0AGostaria%20de%20um%20orçamento."
+          )}
+        >
           <Text style={HeaderStyles.Text}>
             Contatos
           </Text>

@@ -9,7 +9,7 @@ export const HomeStyles = StyleSheet.create({
   hero: {
     height: "100%",
     width: "100%",
-    position: "relative", 
+    position: "relative",
     overflow: "hidden",
   },
 
@@ -19,10 +19,16 @@ export const HomeStyles = StyleSheet.create({
   },
 
   mascara: {
-     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(19, 19, 19, 0.71)",
-    zIndex: 999,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(0,0,0,0.6)",
+    zIndex: 20,
+    elevation: 20,
   },
+
 
   overlay: {
     ...StyleSheet.absoluteFillObject,
@@ -73,9 +79,12 @@ export const HomeStyles = StyleSheet.create({
   formContainer: {
     position: "absolute",
     top: 0,
+    left: 0,
+    right: 0,
     bottom: 0,
-    width: "100%",
-    zIndex: 1000
-  }
+    zIndex: 30,
+    elevation: 30,
+  },
+
 
 });

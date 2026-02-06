@@ -1,6 +1,6 @@
 import { ResizeMode, Video } from "expo-av";
 import { useEffect, useRef, useState } from "react";
-import { Animated, Easing, Image, StatusBar, Text, TouchableOpacity, useColorScheme, View } from "react-native";
+import { Alert, Animated, Dimensions, Easing, Image, Linking, StatusBar, Text, TouchableOpacity, useColorScheme, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Form from "../components/form";
 import Header from "../components/header";
@@ -13,30 +13,32 @@ export default function Home() {
   const isDarkMode = colorScheme === "dark"
   const [renderForm, setRenderForm] = useState(false)
 
-  const formAnim = useRef(new Animated.Value(-1000)).current
+  const { width } = Dimensions.get("window")
+
+  const formAnim = useRef(new Animated.Value(-width)).current
 
   useEffect(() => {
-
     if (showForm) {
-      setRenderForm(true)
+      setRenderForm(true);
 
       Animated.timing(formAnim, {
         toValue: 0,
-        duration: 1500,
-        easing: Easing.out(Easing.exp),
-        useNativeDriver: true
+        duration: 900,
+        easing: Easing.out(Easing.ease),
+        useNativeDriver: true,
       }).start();
     } else {
       Animated.timing(formAnim, {
-        toValue: -400,
-        duration: 1500,
+        toValue: -width,
+        duration: 800,
         easing: Easing.in(Easing.ease),
         useNativeDriver: true,
       }).start(() => {
-        setRenderForm(false)
+        setRenderForm(false);
       });
     }
-  }, [showForm])
+  }, [showForm]);
+
 
   return (
     <SafeAreaView style={HomeStyles.container}>

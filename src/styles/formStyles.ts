@@ -38,18 +38,15 @@ export const FormStyles = StyleSheet.create({
     width: 270,
     height: 40,
     borderRadius: 5,
-    borderColor: "#808080",
     borderWidth: 1,
-    outlineColor: "#18D80F",
     paddingLeft: 7
   },
+  
   TextArea: {
     width: 270,
     height: 100,
     borderRadius: 5,
-    borderColor: "#808080",
     borderWidth: 1,
-    outlineColor: "#18D80F",
     paddingLeft: 7,
   },
 
