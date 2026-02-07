@@ -55,7 +55,6 @@ Problema: ${duvida}`;
     <View style={FormStyles.Overlay}>
       <View style={FormStyles.Container}>
 
-        {/* Botão fechar */}
         <TouchableOpacity
           onPress={onClose}
           style={FormStyles.ButtonFechar}
@@ -63,7 +62,6 @@ Problema: ${duvida}`;
           <Text style={FormStyles.ButtonFecharText}>✕</Text>
         </TouchableOpacity>
 
-        {/* Nome */}
         <TextInput
           style={[
             FormStyles.Input,
@@ -81,7 +79,6 @@ Problema: ${duvida}`;
           onBlur={() => setFocusedInput(null)}
         />
 
-        {/* Telefone */}
         <TextInput
           style={[
             FormStyles.Input,
@@ -100,7 +97,6 @@ Problema: ${duvida}`;
           onBlur={() => setFocusedInput(null)}
         />
 
-        {/* Problema */}
         <TextInput
           style={[
             FormStyles.TextArea,
@@ -119,7 +115,6 @@ Problema: ${duvida}`;
           onBlur={() => setFocusedInput(null)}
         />
 
-        {/* Botão enviar */}
         <TouchableOpacity
           onPress={handleWhatsApp}
           style={FormStyles.Button}
