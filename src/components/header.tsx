@@ -10,7 +10,7 @@ export default function Header() {
   return (
 
     <View style={HeaderStyles.Container}>
-      <Image style={HeaderStyles.image} source={require("../../assets/images/icon.png")} />
+      <Image style={HeaderStyles.image} source={require("../../assets/images/icon.jpeg")} />
 
       <View style={HeaderStyles.HeaderText}>
         <TouchableOpacity>

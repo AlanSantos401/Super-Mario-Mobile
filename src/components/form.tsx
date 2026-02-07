@@ -21,6 +21,7 @@ export default function Form({ onClose }: ModalProps) {
     "nome" | "telefone" | "duvida" | null
   >(null);
 
+
   const handleWhatsApp = () => {
     if (!nome || !telefone || !duvida) {
       Alert.alert("Atenção", "Preencha todos os campos");
@@ -38,9 +39,16 @@ Problema: ${duvida}`;
 
     const url = `https://wa.me/${whatsapp}?text=${encodeURIComponent(mensagem)}`;
 
-    Linking.openURL(url).catch(() => {
+    Linking.openURL(url).then(() => {
+      setNome("")
+      setTelefone("")
+      setDuvida("")
+      setFocusedInput(null)
+
+      onClose()
+    }).catch(() => {
       Alert.alert("Erro", "Não foi possível abrir o WhatsApp");
-    });
+    })
   };
 
   return (
